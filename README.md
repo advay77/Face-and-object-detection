@@ -92,11 +92,6 @@ http://localhost:5000
 
 ## 🎥 **Live Demo**  
 
-![Detection Demo](https://media.giphy.com/media/3o7TKzsfT2k4xGxMFO/giphy.gif)  
-
----
-## VIDEOS  
-
 https://github.com/user-attachments/assets/947a307d-4821-464f-8b10-6cf4f12a1305
  
 ## 🎯 **Use Cases**  
