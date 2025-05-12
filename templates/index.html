@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face and Object Detection System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #video {
+            border: 1px solid #ddd;
+            max-width: 100%;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .face-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .face-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+        }
+        .face-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+        .face-card p {
+            margin: 5px 0;
+            font-size: 12px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Face and Object Detection System</h1>
+        
+        <div class="section">
+            <h2>Live Detection</h2>
+            <div class="controls">
+                <button id="startBtn">Start Camera</button>
+                <button id="stopBtn" disabled>Stop Camera</button>
+                <button id="captureBtn" disabled>Capture Frame</button>
+            </div>
+            <div class="video-container">
+                <video id="video" width="640" height="480" autoplay></video>
+                <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+            </div>
+            <div class="results">
+                <h3>Detection Results</h3>
+                <div id="detectionResults"></div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Registered Faces</h2>
+            <div class="face-gallery" id="faceGallery">
+                <!-- Face cards will be added here -->
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Tracked Objects</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Class</th>
+                        <th>Owner</th>
+                        <th>Last Seen</th>
+                    </tr>
+                </thead>
+                <tbody id="objectsTable">
+                    <!-- Object rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // DOM elements
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const captureBtn = document.getElementById('captureBtn');
+        const detectionResults = document.getElementById('detectionResults');
+        const faceGallery = document.getElementById('faceGallery');
+        const objectsTable = document.getElementById('objectsTable');
+        
+        // Video stream
+        let stream = null;
+        
+        // Start camera
+        startBtn.addEventListener('click', async () => {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+                captureBtn.disabled = false;
+            } catch (err) {
+                console.error('Error accessing camera:', err);
+                alert('Error accessing camera: ' + err.message);
+            }
+        });
+        
+        // Stop camera
+        stopBtn.addEventListener('click', () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                video.srcObject = null;
+                startBtn.disabled = false;
+                stopBtn.disabled = true;
+                captureBtn.disabled = true;
+            }
+        });
+        
+        // Capture frame
+        captureBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert canvas to base64 image
+            const imageData = canvas.toDataURL('image/jpeg');
+            const base64Data = imageData.split(',')[1];
+            
+            // Send to API for detection
+            detectObjects(base64Data);
+        });
+        
+        // Detect objects in image
+        async function detectObjects(imageData) {
+            try {
+                const response = await fetch('/api/detect', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ image: imageData })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    displayDetectionResults(data);
+                } else {
+                    console.error('Detection error:', data.message);
+                    detectionResults.innerHTML = `<p>Error: ${data.message}</p>`;
+                }
+            } catch (err) {
+                console.error('API error:', err);
+                detectionResults.innerHTML = `<p>API Error: ${err.message}</p>`;
+            }
+        }
+        
+        // Display detection results
+        function displayDetectionResults(data) {
+            const { faces, objects } = data;
+            
+            let html = `
+                <p>Detected ${faces.length} faces and ${objects.length} objects</p>
+                <h4>Faces:</h4>
+                <ul>
+            `;
+            
+            faces.forEach(face => {
+                html += `<li>Confidence: ${face.confidence.toFixed(2)}`;
+                if (face.face_id) {
+                    html += ` - ID: ${face.face_id}`;
+                }
+                html += `</li>`;
+            });
+            
+            html += `</ul><h4>Objects:</h4><ul>`;
+            
+            objects.forEach(obj => {
+                html += `<li>${obj.class_name} - Confidence: ${obj.confidence.toFixed(2)}`;
+                if (obj.tracking_id) {
+                    html += ` - ID: ${obj.tracking_id}`;
+                }
+                html += `</li>`;
+            });
+            
+            html += `</ul>`;
+            
+            detectionResults.innerHTML = html;
+            
+            // Draw detections on canvas
+            drawDetections(faces, objects);
+        }
+        
+        // Draw detections on canvas
+        function drawDetections(faces, objects) {
+            const context = canvas.getContext('2d');
+            
+            // Draw original image
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Draw faces
+            context.strokeStyle = 'green';
+            context.lineWidth = 2;
+            context.font = '12px Arial';
+            context.fillStyle = 'green';
+            
+            faces.forEach(face => {
+                const [x1, y1, x2, y2] = face.bbox.map(coord => Math.round(coord));
+                context.strokeRect(x1, y1, x2 - x1, y2 - y1);
+                
+                let label = `Person ${face.confidence.toFixed(2)}`;
+                if (face.face_id) {
+                    label += ` - ${face.face_id.substring(0, 8)}`;
+                }
+                
+                context.fillText(label, x1, y1 - 5);
+            });
+            
+            // Draw objects
+            context.strokeStyle = 'red';
+            context.fillStyle = 'red';
+            
+            objects.forEach(obj => {
+                const [x1, y1, x2, y2] = obj.bbox.map(coord => Math.round(coord));
+                context.strokeRect(x1, y1, x2 - x1, y2 - y1);
+                
+                let label = `${obj.class_name} ${obj.confidence.toFixed(2)}`;
+                if (obj.tracking_id) {
+                    label += ` - ${obj.tracking_id.substring(0, 8)}`;
+                }
+                
+                context.fillText(label, x1, y1 - 5);
+            });
+            
+            // Show canvas
+            canvas.style.display = 'block';
+            video.style.display = 'none';
+        }
+        
+        // Load faces
+        async function loadFaces() {
+            try {
+                const response = await fetch('/api/faces');
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    faceGallery.innerHTML = '';
+                    
+                    data.faces.forEach(async face => {
+                        try {
+                            // Get face image
+                            const imageResponse = await fetch(`/api/faces/${face.id}/image`);
+                            const imageData = await imageResponse.json();
+                            
+                            if (imageData.status === 'success') {
+                                const faceCard = document.createElement('div');
+                                faceCard.className = 'face-card';
+                                
+                                faceCard.innerHTML = `
+                                    <img src="data:image/jpeg;base64,${imageData.image}" alt="Face">
+                                    <p>ID: ${face.id.substring(0, 8)}...</p>
+                                    <p>Time: ${new Date(face.timestamp).toLocaleString()}</p>
+                                `;
+                                
+                                faceGallery.appendChild(faceCard);
+                            }
+                        } catch (err) {
+                            console.error('Error loading face image:', err);
+                        }
+                    });
+                } else {
+                    console.error('Error loading faces:', data.message);
+                }
+            } catch (err) {
+                console.error('API error:', err);
+            }
+        }
+        
+        // Load objects
+        async function loadObjects() {
+            try {
+                const response = await fetch('/api/objects');
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    objectsTable.innerHTML = '';
+                    
+                    data.objects.forEach(obj => {
+                        const row = document.createElement('tr');
+                        
+                        row.innerHTML = `
+                            <td>${obj.tracking_id.substring(0, 8)}...</td>
+                            <td>${obj.class_name}</td>
+                            <td>${obj.owner_id ? obj.owner_id.substring(0, 8) + '...' : 'Unassigned'}</td>
+                            <td>${new Date(obj.last_seen).toLocaleString()}</td>
+                        `;
+                        
+                        objectsTable.appendChild(row);
+                    });
+                } else {
+                    console.error('Error loading objects:', data.message);
+                }
+            } catch (err) {
+                console.error('API error:', err);
+            }
+        }
+        
+        // Load data on page load
+        window.addEventListener('load', () => {
+            loadFaces();
+            loadObjects();
+            
+            // Refresh data every 30 seconds
+            setInterval(() => {
+                loadFaces();
+                loadObjects();
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

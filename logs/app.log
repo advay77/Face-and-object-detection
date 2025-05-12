@@ -1,0 +1,187 @@
+2025-05-12 12:33:55,422 - app - INFO - Application initialized
+2025-05-12 12:33:55,527 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.16.33.57:8000
+2025-05-12 12:33:55,529 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 12:33:59,845 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:33:59] "GET / HTTP/1.1" 200 -
+2025-05-12 12:34:00,191 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-12 12:34:00,452 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:00,452 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:00,458 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:00] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:34:00,459 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:00] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:34:20,942 - detection.face_detector - INFO - Face detector initialized
+2025-05-12 12:34:21,037 - detection.object_detector - INFO - Object detector initialized
+2025-05-12 12:34:26,232 - detection.face_detector - INFO - Face detector initialized
+2025-05-12 12:34:30,988 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:30] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:31,461 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:31] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:31,804 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:31] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:31,851 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:31,855 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:31] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:34:31,882 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:31,886 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:31] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:34:32,044 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:32] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:32,232 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:32] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:32,429 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:32] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:32,606 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:32] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:32,777 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:32] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:34:43,810 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:34:54,057 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:54] "GET / HTTP/1.1" 200 -
+2025-05-12 12:34:54,139 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:54,143 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:54] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:34:54,150 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:34:54,155 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:34:54] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:35:09,038 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:09] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:35:24,138 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:24,139 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:24,141 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:24] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:35:24,143 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:24] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:35:29,826 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:29] "GET / HTTP/1.1" 200 -
+2025-05-12 12:35:29,914 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:29,917 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:29,918 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:29] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:35:29,920 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:29] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:35:43,455 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:43] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:35:43,792 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:35:59,918 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:59,919 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:35:59,922 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:59] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:35:59,923 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:35:59] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:36:29,918 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:36:29,923 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:36:29] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:36:29,924 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:36:29,927 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:36:29] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:36:43,789 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:36:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:36:59,916 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:36:59,921 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:36:59] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:36:59,944 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:36:59,953 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:36:59] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:37:29,907 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:37:29,908 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:37:29,911 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:37:29] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:37:29,912 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:37:29] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:37:43,792 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:37:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:37:59,900 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:37:59,901 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:37:59,903 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:37:59] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:37:59,905 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:37:59] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:38:29,928 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:38:29,928 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:38:29,930 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:38:29] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:38:29,932 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:38:29] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:38:43,793 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:38:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:38:59,906 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:38:59,909 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:38:59] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:38:59,930 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:38:59,932 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:38:59] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:39:29,905 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:39:29,908 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:39:29] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:39:29,909 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:39:29,913 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:39:29] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:39:43,803 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:39:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:39:59,931 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:39:59,934 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:39:59] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:39:59,934 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:39:59,938 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:39:59] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:40:07,353 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:07] "GET / HTTP/1.1" 200 -
+2025-05-12 12:40:07,432 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:07,435 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:07] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:40:07,448 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:07,451 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:07] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:40:22,902 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:22] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:40:27,322 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:27] "GET / HTTP/1.1" 200 -
+2025-05-12 12:40:27,411 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:27,415 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:27] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:40:27,415 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:27,419 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:27] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:40:41,772 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:41] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:40:43,801 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:40:46,493 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:46] "GET / HTTP/1.1" 200 -
+2025-05-12 12:40:46,573 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:46,576 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:46] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:40:46,582 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:40:46,585 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:46] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:40:57,323 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:40:57] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:41:14,948 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:14] "GET / HTTP/1.1" 200 -
+2025-05-12 12:41:15,048 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:15,055 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:15] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:41:15,055 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:15,061 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:15] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:41:20,835 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:20] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:41:43,792 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:43] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:41:45,035 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:45,037 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:45,040 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:45] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:41:45,042 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:45] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:41:46,959 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:46] "GET / HTTP/1.1" 200 -
+2025-05-12 12:41:47,047 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:47,051 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:47] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:41:47,052 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:41:47,058 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:47] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:41:56,369 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:41:56] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:42:17,034 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:17,035 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:17,037 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:17] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:42:17,038 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:17] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:42:47,036 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:47,038 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:47,039 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:47] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:42:47,041 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:47] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:42:56,987 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:56] "GET / HTTP/1.1" 200 -
+2025-05-12 12:42:57,071 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:57,071 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:42:57,074 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:57] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:42:57,075 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:42:57] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:43:13,880 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:43:13] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:43:23,264 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:43:23] "[33mGET /stations HTTP/1.1[0m" 404 -
+2025-05-12 12:46:13,640 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:13] "GET / HTTP/1.1" 200 -
+2025-05-12 12:46:13,935 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:46:13,936 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:46:13,940 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:13] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:46:13,942 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:13] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:46:42,627 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:42] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:46:43,923 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:46:43,925 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:46:43,927 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:43] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:46:43,929 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:43] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:46:58,255 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:46:58] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:13,917 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:47:13,917 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:47:13,919 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:13] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:47:13,920 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:13] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:47:25,038 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:25] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:34,951 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:34] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:42,756 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:42] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:43,916 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:47:43,918 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:43] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:47:43,947 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:47:43,950 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:43] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:47:47,008 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:47] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:52,324 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:52] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:54,531 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:54] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:56,368 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:56] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:47:58,028 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:47:58] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:49:20,453 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:20] "GET / HTTP/1.1" 200 -
+2025-05-12 12:49:20,725 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:49:20,730 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:20] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:49:20,758 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:49:20,763 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:20] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:49:29,522 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:29] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:49:36,066 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:36] "GET / HTTP/1.1" 200 -
+2025-05-12 12:49:36,166 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:49:36,171 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:36] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:49:36,176 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:49:36,182 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:36] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:49:45,779 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:49:45] "POST /api/detect HTTP/1.1" 200 -
+2025-05-12 12:50:06,155 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:50:06,158 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:50:06,159 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:50:06] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:50:06,163 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:50:06] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:50:36,492 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:50:36,494 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:50:36] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:50:36,517 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:50:36,520 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:50:36] "GET /api/faces HTTP/1.1" 200 -
+2025-05-12 12:51:06,502 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:51:06,504 - database.db - INFO - Connected to MongoDB: face_object_detection
+2025-05-12 12:51:06,506 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:51:06] "GET /api/objects HTTP/1.1" 200 -
+2025-05-12 12:51:06,508 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 12:51:06] "GET /api/faces HTTP/1.1" 200 -
